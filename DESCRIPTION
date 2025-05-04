@@ -1,0 +1,26 @@
+Package: brcastage
+Type: Package
+Title: Breast Cancer Anatomic and Prognostic Staging Calculator Based on AJCC 8th Ed.
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Saieesh","Rao",
+      email = "saieesh.rao@nm.org",
+      role = c("aut", "cre")
+    )
+  )
+Description: Tools to assign prognostic breast cancer stages based on
+    combinations of tumor (T), nodal (N), metastasis (M), receptor status, tumor
+    grade, and multigene panel testing (when available). The staging logic
+    follows interpretations of the American Joint Committee on Cancer (AJCC) 8th
+    edition guidelines, derived from publicly available sources. This package is
+    intended for educational and research purposes and is not affiliated with or
+    endorsed by AJCC or the American Cancer Society.
+License: BSD-3-Clause license
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 2.10)
+Imports: 
+    data.table
