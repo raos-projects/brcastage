@@ -24,3 +24,5 @@ Depends:
     R (>= 2.10)
 Imports: 
     data.table
+URL: https://github.com/raos-projects/brcastage
+BugReports: https://github.com/raos-projects/brcastage/issues
