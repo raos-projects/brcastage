@@ -22,7 +22,7 @@ usethis::use_package("data.table")
 #' the above variables
 #' @export
 #'
-#' @examples clinical_prognostic_stage(1,0,F,F,F,F,2)
+#' @examples clinical_prognostic_stage(1,0,0,0,0,0,2)
 clinical_prognostic_stage <- function(t, n, m, er, pr, her2, grade, t_mi = F, n_mi = F, mgps = NA){
 
   #multigene panel test score

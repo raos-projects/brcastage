@@ -13,7 +13,7 @@ usethis::use_package("data.table")
 #' the above variables
 #' @export
 #'
-#' @examples anatomic_stage(1,0,F)
+#' @examples anatomic_stage(1,0,0)
 anatomic_stage <- function(t, n, m, t_mi = F, n_mi = F){
   result <- with(staging_lookup, Anatomic_Stage[
     T_int == t &
