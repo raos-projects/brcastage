@@ -22,7 +22,7 @@ clinical_prognostic_stage <- function(t, n, m, er, pr, her2, grade, t_mi = F, n_
 
   #metastatic disease
   if(as.numeric(m) == 1) {
-    return('IV')
+    return(factor('IV',levels = c('0','IA','IB','IC','IIA','IIB','IIC','IIIA','IIIB','IIIC','IV')))
   }
 
   result <- with(staging_lookup, Clinical_Prognostic_Stage[
