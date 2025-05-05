@@ -29,12 +29,15 @@ pathologic_prognostic_stage <- function(t, n, m, er, pr, her2, grade, t_mi = F, 
   if(is.numeric(as.numeric(mgps)) & !is.nan(mgps)){
     if(as.numeric(t) %in% c(1,2) &
        as.numeric(n) %in% c(0) &
-       as.logical(as.numeric(er)) & !as.logical(as.numeric(her2)) &
+       as.numeric(m) == 0 &
+       as.logical(as.numeric(er)) &
+       !as.logical(as.numeric(her2)) &
        as.numeric(mgps) < 11){
       return("IA")
     }
+  }
   # metastatic disease
-  } else if(as.numeric(m) == 1) {
+  if(as.numeric(m) == 1) {
     return('IV')
   }
 
