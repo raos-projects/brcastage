@@ -15,6 +15,12 @@ usethis::use_package("data.table")
 #'
 #' @examples anatomic_stage(1,0,0)
 anatomic_stage <- function(t, n, m, t_mi = F, n_mi = F){
+
+  #metastatic disease
+  if(as.numeric(m) == 1) {
+    return('IV')
+  }
+
   result <- with(staging_lookup, Anatomic_Stage[
     T_int == t &
       N_int == n &

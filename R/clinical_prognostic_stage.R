@@ -12,29 +12,16 @@ usethis::use_package("data.table")
 #' possibly TRUE when tumor stage is T1
 #' @param n_mi Clinical micrometastatic nodal disease, either TRUE or FALSE.
 #' Only ever possibly TRUE when nodal stage is N1
-#' @param mgps Multigene Panel Score predicting risk of recurrence and likely
-#' benefit from chemotherapy. Presumes the score is calculated with Oncotype DX.
-#' Cancers that are T1-2, N0, ER+, Her2- tumors are downstaged to IA when
-#' mgps < 11. If mgps is NA or no value is supplied, the prognostic stage is
-#' calculated without it.
 #'
 #' @returns a character string representing clinical prognostic stage based on
 #' the above variables
 #' @export
 #'
 #' @examples clinical_prognostic_stage(1,0,0,0,0,0,2)
-clinical_prognostic_stage <- function(t, n, m, er, pr, her2, grade, t_mi = F, n_mi = F, mgps = NA){
+clinical_prognostic_stage <- function(t, n, m, er, pr, her2, grade, t_mi = F, n_mi = F){
 
-  #multigene panel test score
-  if(is.numeric(as.numeric(mgps)) & !is.nan(mgps)){
-    if(as.numeric(t) %in% c(1,2) &
-       as.numeric(n) %in% c(0) &
-       as.logical(as.numeric(er)) & !as.logical(as.numeric(her2)) &
-       as.numeric(mgps) < 11){
-      return("IA")
-    }
-    # metastatic disease
-  } else if(as.numeric(m) == 1) {
+  #metastatic disease
+  if(as.numeric(m) == 1) {
     return('IV')
   }
 
